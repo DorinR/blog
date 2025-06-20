@@ -27,16 +27,19 @@ const { customGoogleAnalyticsJS = '', customUmamiAnalyticsJS = '' } = themeConfi
 
 const initMetaTheme = defaultMode === 'dark' ? darkMode : lightMode
 const siteTitle = i18nTitle ? currentUI.title : title
-const siteSubtitle = i18nTitle ? currentUI.subtitle : subtitle
+// const siteSubtitle = i18nTitle ? currentUI.subtitle : subtitle
 const siteDescription = i18nTitle ? currentUI.description : description
 
-const pageTitle = postTitle ? `${postTitle} | ${siteTitle}` : `${siteTitle} - ${siteSubtitle}`
+const pageTitle = postTitle ? `${postTitle} | ${siteTitle}` : `${siteTitle}`
 const pageDescription = postDescription || siteDescription
+
+console.log(postSlug);
+
 const pageImage = postSlug
   ? `${url}/og/${postSlug}.png`
   : apiflashKey
     ? `https://api.apiflash.com/v1/urltoimage?access_key=${apiflashKey}&url=${url}/${langCode}&format=png&width=1500&height=788&ttl=86400&wait_until=network_idle&no_tracking=true`
-    : `https://api.apiflash.com/v1/urltoimage?access_key=02a837b6188f4ba0a7fd9fbeff03a83e&url=https://retypeset.radishzz.cc/${langCode}&format=png&width=1500&height=788&ttl=172800&wait_until=network_idle&no_tracking=true`
+    : `https://api.apiflash.com/v1/urltoimage?access_key=02a837b6188f4ba0a7fd9fbeff03a83e&url=${url}/${langCode}&format=png&width=1500&height=788&ttl=172800&wait_until=network_idle&no_tracking=true`
 ---
 
 <head>
