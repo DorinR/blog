@@ -42,11 +42,9 @@ export const themeConfig: ThemeConfig = {
 
   // GLOBAL SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> START
   global: {
-    // default language
-    locale: 'en', // de, en, es, fr, ja, ko, pl, pt, ru, zh, zh-tw
-    // more languages
-    // not fill in the locale code above again, can be an empty array []
-    moreLocales: [], // ['de', 'en', 'es', 'fr', 'ja', 'ko', 'pl', 'pt', 'ru', 'zh', 'zh-tw']
+    // default language (English only in this repo)
+    locale: 'en',
+    moreLocales: [],
     // font styles for post text
     fontStyle: 'sans', // sans, serif
     // date format for posts

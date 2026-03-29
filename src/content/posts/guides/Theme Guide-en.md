@@ -72,13 +72,9 @@ color: {
 
 ```ts
 global: {
-  // default language
-  // language of the site root path '/'
-  locale: 'zh' // de, en, es, fr, ja, ko, pl, pt, ru, zh, zh-tw
-  // more languages
-  // generate multi-language paths such as '/en/' '/es/'
-  // not fill in the locale code above again, can be an empty array []
-  moreLocales: ['en', 'es', 'ja', 'ru', 'zh-tw'] // ['de', 'en', 'es', 'fr', 'ja', 'ko', 'pl', 'pt', 'ru', 'zh', 'zh-tw']
+  // default language (this fork uses English only)
+  locale: 'en'
+  moreLocales: []
   // font style
   fontStyle: 'sans' // sans, serif
   // date format for posts
@@ -323,7 +319,7 @@ tags:
 draft: true/false
 pin: 0-99
 toc: true/false
-lang: de/en/es/fr/ja/ko/pl/pt/ru/zh/zh-tw
+lang: en (optional; omit or use '' for default)
 abbrlink: theme-guide
 ---
 ```
@@ -344,23 +340,14 @@ Generate table of contents. Shows h2 to h4 headings. Determined by the global co
 
 #### lang
 
-Specifies the article language. Only one language can be specified. If not specified, the article will be displayed in all language paths by default.
+Optional frontmatter field for post language. In this English-only setup, paths are always under the site root (for example `example.com/posts/.../`).
 
 ```md
-# src/config.ts
-# locale: 'en'
-# moreLocales: ['es', 'ru']
-
-# lang: ''
+# lang omitted or ''
 src/content/posts/apple.md   ->  example.com/posts/apple/
-                             ->  example.com/es/posts/apple/
-                             ->  example.com/ru/posts/apple/
+
 # lang: en
 src/content/posts/apple.md   ->  example.com/posts/apple/
-# lang: es
-src/content/posts/apple.md   ->  example.com/es/posts/apple/
-# lang: ru
-src/content/posts/apple.md   ->  example.com/ru/posts/apple/
 ```
 
 #### abbrlink
@@ -368,20 +355,15 @@ src/content/posts/apple.md   ->  example.com/ru/posts/apple/
 Customizes the article URL. Can only contain lowercase letters, numbers, and hyphens `-`.
 
 ```md
-# src/config.ts
-# locale: 'en'
-# moreLocales: ['es', 'ru']
-# lang: 'es'
-
 # abbrlink: ''
-src/content/posts/apple.md           ->  example.com/es/posts/apple/
-src/content/posts/guide/apple.md     ->  example.com/es/posts/guide/apple/
-src/content/posts/2025/03/apple.md   ->  example.com/es/posts/2025/03/apple/
+src/content/posts/apple.md           ->  example.com/posts/apple/
+src/content/posts/guide/apple.md     ->  example.com/posts/guide/apple/
+src/content/posts/2025/03/apple.md   ->  example.com/posts/2025/03/apple/
 
 # abbrlink: 'banana'
-src/content/posts/apple.md           ->  example.com/es/posts/banana/
-src/content/posts/guide/apple.md     ->  example.com/es/posts/banana/
-src/content/posts/2025/03/apple.md   ->  example.com/es/posts/banana/
+src/content/posts/apple.md           ->  example.com/posts/banana/
+src/content/posts/guide/apple.md     ->  example.com/posts/banana/
+src/content/posts/2025/03/apple.md   ->  example.com/posts/banana/
 ```
 
 ### Mixed Text Formatting
@@ -392,8 +374,5 @@ Run `pnpm format-posts` to optimize the formatting in Markdown files within the 
 pnpm format-posts
 🔍 Scanning Markdown files...
 📦 Found 56 Markdown files
-✅ src/content/posts/guides/Theme Guide-ja.md
-✅ src/content/posts/guides/Theme Guide-zh-tw.md
-✅ src/content/posts/guides/Theme Guide-zh.md
-✨ Formatted 3 files successfully
+✨ Formatted files successfully
 ```

@@ -33,8 +33,6 @@ const siteDescription = i18nTitle ? currentUI.description : description
 const pageTitle = postTitle ? `${postTitle} | ${siteTitle}` : `${siteTitle}`
 const pageDescription = postDescription || siteDescription
 
-console.log(postSlug);
-
 const pageImage = postSlug
   ? `${url}/og/${postSlug}.png`
   : apiflashKey
@@ -72,14 +70,15 @@ const pageImage = postSlug
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="canonical" href={Astro.url} />
 
-<!-- i18n hreflang generate -->
+<!-- hreflang (English only) -->
 {allLocales.map(lang => (
   <link
     rel="alternate"
     href={`${url}${lang === defaultLocale ? '' : `/${lang}/`}`}
-    hreflang={lang === 'zh-tw' ? 'zh-TW' : lang}
+    hreflang={lang}
   />
 ))}
+<link rel="alternate" href={`${url}/`} hreflang="x-default" />
 
 <!-- Open Graph -->
 <meta property="og:type" content={postTitle ? 'article' : 'website'} />

@@ -3,24 +3,17 @@
 <img alt="Cover Image" src="assets/images/retypeset-en-desktop.webp"/>
 <img alt="Cover Image" src="assets/images/retypeset-en-mobile.webp"/>
 
-[简体中文](assets/docs/README.zh.md)｜[繁体中文](assets/docs/README.zh-tw.md)｜[日本語](assets/docs/README.ja.md)｜[Español](assets/docs/README.es.md)｜[Français](assets/docs/README.fr.md)｜[Русский](assets/docs/README.ru.md)
-
 Retypeset is a static blog theme based on the [Astro](https://astro.build/) framework. Inspired by [Typography](https://astro-theme-typography.vercel.app/), Retypeset establishes a new visual standard and reimagines the layout of all pages, creating a reading experience reminiscent of paper books, reviving the beauty of typography. Details in every sight, elegance in every space.
 
 ## Demo
 
-- [Retypeset](https://retypeset.radishzz.cc/en/)
-- [Retipografía](https://retypeset.radishzz.cc/es/)
-- [Переверстка](https://retypeset.radishzz.cc/ru/)
-- [重新编排](https://retypeset.radishzz.cc/)
-- [重新編排](https://retypeset.radishzz.cc/zh-tw/)
-- [再組版](https://retypeset.radishzz.cc/ja/)
+- [dorinr.me](https://dorinr.me/)
 
 ## Features
 
 - Built with Astro and UnoCSS
 - Support for SEO, Sitemap, OpenGraph, TOC, RSS, MDX and LaTeX
-- i18n support
+- English UI strings (single-locale setup)
 - Light / Dark mode
 - Elegant view transitions
 - Rich theme customization
