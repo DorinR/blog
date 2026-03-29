@@ -2,7 +2,4 @@
 lang: en
 ---
 
-I'm a fullstack developer currently working in legal tech. 
-
-#### some past projects:
-[squaresolve.me](https://squaresolve.me)
+I'm a fullstack developer from Montreal working at a legal tech startup. 
